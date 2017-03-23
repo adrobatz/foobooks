@@ -9,8 +9,21 @@
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/
+*/ 
+
+# New route
+Route::get('/example', function () {
+    return 'hello there!';
+});
 
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/books', 'BookController@index'); 
+
+
+/**
+* Practice
+*/
+Route::any('/practice/{n?}', 'PracticeController@index');
