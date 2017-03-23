@@ -23,6 +23,10 @@ Route::get('/', function () {
 Route::get('/books', 'BookController@index'); 
 
 
+if(config('app.env') == 'local') {
+	Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
+}
+
 /**
 * Practice
 */
